@@ -1,0 +1,74 @@
+{
+    "window.commandCenter": true,
+    "vim.easymotion": true,
+    /*
+     * find all commands
+     * https://code.visualstudio.com/docs/getstarted/keybindings#_default-keyboard-shortcuts
+     * or
+     * Command + P, type Keyboard Shortcuts
+    */
+    "vim.normalModeKeyBindings": [
+        /* 
+          navigation 
+        */
+        // go to declaration
+        {
+            "before": [ "g", "d" ],
+            "commands": [ "editor.action.revealDefinition" ]
+        },
+        // go to implementation
+        {
+            "before": [ "g", "i" ],
+            "commands": [ "editor.action.goToImplementation" ]
+        },
+        // go to class
+        {
+            "before": [ "g", "c" ],
+            "commands": [ "editor.action.goToTypeDefinition" ]
+        },
+        // go to file
+        {
+            "before": [ "g", "f" ],
+            "commands": [ "workbench.action.quickOpen" ]
+        },
+        // go to symbol
+        {
+            "before": [ "g", "s" ],
+            "commands": [ "workbench.action.showAllSymbols" ]
+        },
+        // go to test
+        {
+            "before": [ "g", "t" ],
+            "commands": [ "testing.goToRelatedTest" ]
+        },
+        // go back
+        {
+            "before": [ "g", "b" ],
+            "commands": [ "workbench.action.navigateBack" ]
+        },
+        // go to previous
+        {
+            "before": [ "g", "p" ],
+            "commands": [ "workbench.action.navigateForward" ]
+        },
+        // go to recent files
+        {
+            "before": [ "g", "r" ],
+            "commands": [ "workbench.action.quickOpen" ]
+        },
+        // go to useages
+        {
+            "before": [ "g", "u" ],
+            "commands": [ "editor.action.goToReferences" ]
+        },
+
+        /*
+         * move
+        */
+        // move
+        {
+            "before": [ "<space>", "m" ],
+            "after": [ "<leader>", "<leader>", "/" ]
+        }
+    ]
+}
