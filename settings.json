@@ -6,11 +6,11 @@
      * https://code.visualstudio.com/docs/getstarted/keybindings#_default-keyboard-shortcuts
      * or
      * Command + P, type Keyboard Shortcuts
-    */
+     */
     "vim.normalModeKeyBindings": [
         /* 
          * navigation 
-        */
+         */
         // go to declaration
         {
             "before": [ "g", "d" ],
@@ -64,11 +64,127 @@
 
         /*
          * move
-        */
+         */
         // move
         {
             "before": [ "<space>", "m" ],
             "after": [ "<leader>", "<leader>", "/" ]
+        },
+
+        /*
+         * refactor
+         */
+        // rename
+        {
+            "before": [ "<space>", "r", "r" ],
+            "commands": [ "editor.action.rename" ]
+        },
+
+        /*
+         * windows
+         */
+        // common
+        // window quit
+        {
+            "before": [ "<space>", "w", "q" ],
+            "commands": [ "workbench.action.closeWindow" ]
+        },
+        // window others quit
+        {
+            "before": [ "<space>", "w", "o", "q" ],
+            "commands": [ "workbench.action.closeEditorsInOtherGroups" ]
+        },
+        
+        // split
+        // window split vertically
+        {
+            "before": [ "<space>", "w", "s", "v" ],
+            "commands": [ "workbench.action.splitEditor" ]
+        },
+        // window split horizontally
+        {
+            "before": [ "<space>", "w", "s", "h" ],
+            "commands": [ "workbench.action.splitEditorOrthogonal" ]
+        },
+        // window split quit
+        {
+            "before": [ "<space>", "w", "s", "q" ],
+            "commands": [ "workbench.action.closeWindow" ]
+        },
+        // window split next
+        {
+            "before": [ "<space>", "w", "s", "n" ],
+            "commands": [ "workbench.action.splitEditorToNextGroup" ]
+        },
+        // window split previous
+        {
+            "before": [ "<space>", "w", "s", "p" ],
+            "commands": [ "workbench.action.splitEditorToPreviousGroup" ]
+        },
+
+        /*
+         * bookmark
+         */
+        // bookmark toggle
+        {
+            "before": [ "<space>", "b", "t" ],
+            "commands": [ "bookmarks.toggle" ]
+        },
+        // bookmark next
+        {
+            "before": [ "<space>", "b", "n" ],
+            "commands": [ "bookmarks.jumpToNext" ]
+        },
+        // bookmark previous
+        {
+            "before": [ "<space>", "b", "p" ],
+            "commands": [ "bookmarks.jumpToPrevious" ]
+        },
+        // bookmark list
+        {
+            "before": [ "<space>", "b", "l" ],
+            "commands": [ "bookmarks.list" ]
+        },
+    ],
+    "vim.visualModeKeyBindings": [
+        /*
+         * refactor
+         */
+        // extract constant
+        {
+            "before": [ "<space>", "r", "c" ],
+            "commands": [ 
+                {
+                    "command": "editor.action.codeAction",
+                    "args": {
+                        "kind": "refactor.extract.constant"
+                    }
+                }
+             ]
+        },
+        // extract variable
+        {
+            "before": [ "<space>", "r", "v" ],
+            "commands": [ 
+                {
+                    "command": "editor.action.codeAction",
+                    "args": {
+                        "kind": "refactor.extract.variable"
+                    }
+                }
+             ]
+        },
+        // extract function
+        {
+            "before": [ "<space>", "r", "f" ],
+            "commands": [ 
+                {
+                    "command": "editor.action.codeAction",
+                    "args": {
+                        "kind": "refactor.extract.function"
+                    }
+                }
+             ]
         }
     ]
 }
